@@ -1,53 +1,99 @@
 ﻿@model NurseRequestDto
+@* @model Yt_Dot6Identity.Models.Material *@
 @{
+    
 }
+@* 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/i18n/zh-TW.min.js" integrity="sha512-whWyZS4LtoXu4LzFJbHIgL9Cr7Sf2+KyeEAGumtXN+8U234v1R89monfd9PLYnC0TNBArmPnkFOVo8ShuMpZaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#material').select2({
+        });
+    });
+</script>*@
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<style>
+     .grid{
+        @* margin-bottom: 3rem; *@
+        @* display: grid; *@
+        grid-template-columns: repeat(auto-fit,minmax(200px, 1fr)); @*1fr คือให้คำนวณพื้นที่ auto*@
+        display: block; @*แท็กข้อความ ขึ้นบรรทัดใหม่  การจัดกึ่งกลาง*@
+        margin-left: auto; @*ปรับซ้าย auto  การจัดกึ่งกลาง*@
+        margin-right: auto; @*ปรับขวา auto การจัดกึ่งกลาง*@
+    }
+    .btn1 {
+        width: 90px;  @*ความกว้าง*@
+        height: 35px; @*ความสูง*@
+        background: #aeaeae; @*พื้นหลัง*@
+        border: none; @*ไม่แสดงเส้น*@
+        outline: none; @*ไม่แสดงพื้นที่รอบนอก*@
+        border-radius: 20px; @*ทำให้มุมมน*@
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); @*สร้างเงา*@
+        cursor: pointer; @*ชี้แล้วเปลี่ยนลูกศร*@
+        color: #000000;  @*สี*@
+        font-weight: 600; @*ขนาดตัวอักษร *@
+        background-image: linear-gradient(180deg, #6efda7 0%, #028938 70%);  @*ไล่สี*@
+      
+        
+      
+    }
+    .btn2 {
+        width: 90px; @*ความกว้าง*@
+        height: 35px; @*ความสูง*@
+        background: #aeaeae; @*พื้นหลัง*@
+        border: none; @*ไม่แสดงเส้น*@
+        outline: none; @*ไม่แสดงพื้นที่รอบนอก*@
+        border-radius: 20px; @*ทำให้มุมมน*@ 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); @*สร้างเงา*@
+        cursor: pointer; @*ชี้แล้วเปลี่ยนลูกศร*@
+        color: #000000; @*สี*@
+        font-weight: 600; @*ขนาดตัวอักษร *@
+        background-image: linear-gradient(180deg, #bb9ffd 0%, #6123de 70%); @*ไล่สี*@
+    }
+</style>
 
-
-<div class="row">
-    <div class="col-md-8 mx-auto rounded border p-2">
-        <h2 class="text-center mb-5">New Product</h2>
-
-
+<div class="grid">
+    @* <div class="col-md-8 mx-auto rounded border p-2"> *@
+        @* <h2 class="text-center mb-5">New Product</h2> *@
         <form method="post" enctype="multipart/form-data">
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">QN</label>
-                <div class=col-sm-8>
+            <div class="row ">
+                <div class="col-sm-4">
+                    <label >HN/QN :</label>
                     <input class="form-control" asp-for="QN">
                     <span asp-validation-for="QN" class="text-danger"></span>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">ชื่อ-นามสกุล</label>
-                <div class=col-sm-8>
+                <div class="col-sm-4">
+                    <label >ชื่อ-นามสกุล :</label>
                     <input class="form-control" asp-for="QNName">
                     <span asp-validation-for="QNName" class="text-danger"></span>
                 </div>
-            </div>
-
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">ประเภทคนไข้</label>
-                <div class=col-sm-8>
-                    <select class="form-select" asp-for="PatientType">
+            </div><br>
+            <div class="row ">
+                <div class="col-sm-4">
+                    <label >ประเภทคนไข้ :</label>
+                    <select class="form-select select2" asp-for="PatientType">
                         <option value="OPD">OPD</option>
                         <option value="IPD">IPD</option>
                     </select>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">ประเภทความเร่งด่วน</label>
-                <div class=col-sm-8>
-                    <select class="form-select" asp-for="UrentType">
+                <div class="col-sm-4">
+                    <label >ประเภทความเร่งด่วน :</label>
+                    <select class="form-select select2" asp-for="UrentType">
                         <option value="ปกติ">ปกติ</option>
                         <option value="ด่วน">ด่วน</option>
                         <option value="ด่วนมาก">ด่วนมาก</option>
                     </select>
                 </div>
-            </div>
-
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">ประเภทรถเข็น</label>
-                <div class=col-sm-8>
-                    <select class="form-select" asp-for="MaterialType">
+            </div><br>
+            <div class="row ">
+                <div class="col-sm-4">
+                    <label >ประเภทรถเข็น :</label>
+                    <select class="form-select select2" asp-for="MaterialType"  >
                         <option value='รถนั่ง'>รถนั่ง</option>
                         <option value='รถนอน'>รถนอน</option>
                         <option value='เฉพาะคน(มีรถแล้ว)'>เฉพาะคน(มีรถแล้ว)</option>
@@ -65,45 +111,53 @@
                         <option value='รถ Ambulance'>รถ Ambulance</option>
                     </select>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">หมายเหตุ</label>
-                <div class=col-sm-8>
+                <div class="col-sm-4">
+                    <label >หมายเหตุ :</label>
                     <input class="form-control" asp-for="Remark">
                     <span asp-validation-for="Remark" class="text-danger"></span>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">จุดส่งที่ 1</label>
-                <div class=col-sm-8>
-                    <select class="form-select" asp-for="StartPoint">
+            </div><br>
+            <div class="row ">
+                <div class="col-sm-4">
+                    <label >จุดส่งที่ 1 :</label>
+                    <select class="form-select select2" asp-for="StartPoint">
                         <option value="1 ห้องฉุกเฉิน">1 ห้องฉุกเฉิน</option>
                         <option value="2 ห้องเจาะเลือด">2 ห้องเจาะเลือด</option>
                         <option value="3 แผนกเอ็กซเรย์">3 แผนกเอ็กซเรย์</option>
                         <option value="4 ห้องตรวจคลื่นหัวใจ">4 ห้องตรวจคลื่นหัวใจ</option>
                     </select>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">จุดส่งที่ 2</label>
-                <div class=col-sm-8>
-                    <select class="form-select" asp-for="EndPoint">
+                <div class="col-sm-4">
+                    <label >จุดส่งที่ 2 :</label>
+                    <select class="form-select select2" asp-for="EndPoint">
                         <option value="1 ห้องฉุกเฉิน">1 ห้องฉุกเฉิน</option>
                         <option value="2 ห้องเจาะเลือด">2 ห้องเจาะเลือด</option>
                         <option value="3 แผนกเอ็กซเรย์">3 แผนกเอ็กซเรย์</option>
                         <option value="4 ห้องตรวจคลื่นหัวใจ">4 ห้องตรวจคลื่นหัวใจ</option>
                     </select>
                 </div>
-            </div>
-
+            </div><br>
             <div class="row">
-                <div class="offset-sm-4 col-sm-4 d-grid">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="col-sm-4 d-grid" >
+                    <button type="submit" class="btn1 btn-primary" >บันทึก</button>
                 </div>
                 <div class="col-sm-4 d-grid">
-                    <a class="btn btn-outline-primary" asp-asp-controller="NurseRequest" asp-action="Index" role="button">Cancel</a>
+                    <a  asp-asp-controller="NurseRequest" asp-action="Index" role="button" aria-disabled="true"><button class="btn2 btn-primary" >ยกเลิก</button></a>
+                    @* <button class="btn2" asp-action="Index" asp-controller="NurseRequest" type="submit">ยกเลิก1</button> *@
                 </div>
             </div>
         </form>
-    </div>
+        <script>
+            @* $(document).ready(function() {
+            $('.select2').select2({
+            closeOnSelect: false
+            });
+            }); *@
+
+            $(document).ready(function() {
+                $('.select2').select2({
+                });
+            });
+        </script>
+    @* </div> *@
 </div>

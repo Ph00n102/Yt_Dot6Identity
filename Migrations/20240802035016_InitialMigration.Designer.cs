@@ -12,7 +12,7 @@ using Yt_Dot6Identity.Models.Domain;
 namespace Yt_Dot6Identity.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20240719021838_InitialMigration")]
+    [Migration("20240802035016_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -334,13 +334,13 @@ namespace Yt_Dot6Identity.Migrations
                     b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("EndDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EndPoint")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("EndTime")
+                    b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("JobStatusName")
@@ -355,7 +355,7 @@ namespace Yt_Dot6Identity.Migrations
                     b.Property<string>("PoterFname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("QN")
+                    b.Property<int>("QN")
                         .HasColumnType("int");
 
                     b.Property<string>("QNAge")
@@ -370,10 +370,10 @@ namespace Yt_Dot6Identity.Migrations
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ReqDate")
+                    b.Property<DateTime>("ReqDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("ReqTime")
+                    b.Property<DateTime>("ReqTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StartPoint")
@@ -382,7 +382,7 @@ namespace Yt_Dot6Identity.Migrations
                     b.Property<string>("UrentType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("JobId");
@@ -409,15 +409,14 @@ namespace Yt_Dot6Identity.Migrations
 
             modelBuilder.Entity("Yt_Dot6Identity.Models.Poter", b =>
                 {
-                    b.Property<int>("PoterId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PoterId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Position")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("EmpId")
+                        .HasColumnType("int");
 
                     b.Property<string>("PoterFname")
                         .IsRequired()
@@ -427,9 +426,9 @@ namespace Yt_Dot6Identity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PoterId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Poters");
+                    b.ToTable("Poter");
                 });
 
             modelBuilder.Entity("Yt_Dot6Identity.Models.Urgent", b =>

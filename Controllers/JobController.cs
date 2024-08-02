@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Yt_Dot6Identity.Models;
 using Yt_Dot6Identity.Models.Domain;
 
@@ -19,6 +20,7 @@ namespace SKNHPM.Controllers
         }
         public IActionResult Index()
         {
+            Response.Headers.Add("Refresh","3");
             var nurserequest = context.NurseRequest.OrderByDescending(p => p.JobId).ToList();
             return View(nurserequest);
         }
@@ -59,6 +61,7 @@ namespace SKNHPM.Controllers
 
         public IActionResult Edit(int id)
         {
+            ViewBag.getnurseRequest = context.NurseRequest.ToList();
             var nurseRequest = context.NurseRequest.Find(id);
             if(nurseRequest == null)
             {
@@ -127,6 +130,7 @@ namespace SKNHPM.Controllers
 
             return RedirectToAction("Index", "Job");
         }
+        
     }
 
 }

@@ -19,6 +19,7 @@ namespace Yt_Dot6Identity.Controllers
         }
         public IActionResult Index()
         {
+            Response.Headers.Add("Refresh","3");
             var nurserequest = context.NurseRequest.OrderByDescending(p => p.JobId).ToList();
             return View(nurserequest);
         }
@@ -45,11 +46,11 @@ namespace Yt_Dot6Identity.Controllers
                 UrentType = nurseRequestDto.UrentType,
                 PatientType = nurseRequestDto.PatientType,
                 Remark = nurseRequestDto.Remark,
-                Department = "null",
-                JobStatusName = "null",
-                PoterFname = "null",
-                QNAge = "null",
-                QNSex = "null",
+                Department = nurseRequestDto.Department,
+                JobStatusName = nurseRequestDto.JobStatusName,
+                PoterFname = nurseRequestDto.PoterFname,
+                QNAge = nurseRequestDto.QNAge,
+                QNSex = nurseRequestDto.QNSex,
             };
             context.NurseRequest.Add(nurseRequest);
             context.SaveChanges();
@@ -73,11 +74,11 @@ namespace Yt_Dot6Identity.Controllers
                 UrentType = nurseRequest.UrentType,
                 PatientType = nurseRequest.PatientType,
                 Remark = nurseRequest.Remark,
-                Department = "null",
-                JobStatusName = "null",
-                PoterFname = "null",
-                QNAge = "null",
-                QNSex = "null",
+                Department = nurseRequest.Department,
+                JobStatusName = nurseRequest.JobStatusName,
+                PoterFname = nurseRequest.PoterFname,
+                QNAge = nurseRequest.QNAge,
+                QNSex = nurseRequest.QNSex,
             };
 
              ViewData["NurseRequestId"] = nurseRequest.JobId;
@@ -123,6 +124,45 @@ namespace Yt_Dot6Identity.Controllers
 
             return RedirectToAction("Index", "NurseRequest");
         }
+        [HttpPost]
+        public IActionResult EditStatus(int id, NurseRequestDto nurseRequestDto)
+         {
+            var nurseRequest = context.NurseRequest.Find(id);
+            if(nurseRequest == null)
+            {
+                return RedirectToAction("Index", "Poter");
+            }
+            if (ModelState.IsValid)
+            {
+                ViewData["NurseRequestId"] = nurseRequest.JobId;
+                return View(nurseRequestDto);
+            }
+
+            nurseRequest.JobStatusName="สิ้นสุดการทำงาน";
+            context.SaveChanges();
+            
+            return RedirectToAction("Index", "NurseRequest");
+         }
+
+        [HttpPost]
+        public IActionResult Cancel(int id, NurseRequestDto nurseRequestDto)
+         {
+            var nurseRequest = context.NurseRequest.Find(id);
+            if(nurseRequest == null)
+            {
+                return RedirectToAction("Index", "NurseRequest");
+            }
+            if (ModelState.IsValid)
+            {
+                ViewData["NurseRequestId"] = nurseRequest.JobId;
+                return View(nurseRequestDto);
+            }
+
+            nurseRequest.JobStatusName="ยกเลิกบริการ";
+            context.SaveChanges();
+            
+            return RedirectToAction("Index", "NurseRequest");
+         }
     }
 
 }

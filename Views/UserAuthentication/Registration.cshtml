@@ -5,88 +5,133 @@
     Layout = null;
 }
 <style>
-
-form {
-  border: 3px solid #f1f1f1;
-  width:60%;
-  margin:auto;
-  margin-top:10%;
-}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #aa048b;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-.container {
-  padding: 16px;
-}
-
-.msg{
-  padding: 0px;
-}
-
-
-.err{
-    color:red;
-}
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @* min-height: 10vh; *@
+    }
+    .wrapper{
+        width: 450px; @*ความกว้าง*@
+        background: transparent; @*พื้นภาพโปร่งใส*@
+        border: 2px solid rgba(255, 255, 255, .2); @*ความหนาของเส้น กับสี*@
+        backdrop-filter: blur(40px); @*การเบลอ*@
+        color: #000000; @*สี*@
+        border-radius: 30px; @*ความโค้ง*@
+        padding: 30px 30px; @*ระยะห่าง*@
+    }
+    .wrapper h3{
+        font-size: 36; @*ขนาดตัวอักษร *@
+        text-align: center; @*ตัวอักษรกึ่งกลาง *@
+    }
+     .wrapper .input-box{
+        position: relative;
+        width: 100%; @*ความกว้าง*@
+        height: 40px; @*ความสูง*@
+        @* background: salmon; *@
+        margin: 30px 0px;
+    }
+     .input-box input{
+        width: 300px; @*ความกว้าง*@
+        height: 10px; @*ความสูง*@
+        background: transparent; @*พื้นภาพโปร่งใส*@
+        border: none; @*ไม่แสดงเส้น*@
+        outline: none; @*ไม่แสดงพื้นที่รอบนอก*@
+        border: 2px solid rgba(0, 0, 0, 0.2); @*ความหนาของเส้น กับสี*@
+        border-radius: 10px; @*ความโค้ง*@
+        font-size: 16px; @*ขนาดตัวอักษร *@
+        color: #000000; @*สี*@
+        padding: 20px 50px 20px 35px;
+        display: block; @*แท็กข้อความ ขึ้นบรรทัดใหม่  การจัดกึ่งกลาง*@
+        margin-left: auto; @*ปรับซ้าย auto  การจัดกึ่งกลาง*@
+        margin-right: auto; @*ปรับขวา auto การจัดกึ่งกลาง*@
+    }
+    .input-box input::placeholder{
+        color: #000000; @*สี*@
+    }
+    .wrapper .btn {
+        width: 40%; @*ความกว้าง*@
+        height: 40px; @*ความสูง*@
+        background: #fff;  @*พื้นหลัง*@
+        border: none; @*ไม่แสดงเส้น*@
+        outline: none; @*ไม่แสดงพื้นที่รอบนอก*@
+        border-radius: 40px; @*ความโค้ง*@
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1); @*สร้างเงา*@
+        cursor: pointer; @*ชี้แล้วเปลี่ยนลูกศร*@
+        color: #000000; @*สี*@
+        font-weight: 600;  @*ขนาดตัวอักษร *@
+        display: block; @*แท็กข้อความ ขึ้นบรรทัดใหม่  การจัดกึ่งกลาง*@
+        margin-left: auto; @*ปรับซ้าย auto  การจัดกึ่งกลาง*@
+        margin-right: auto; @*ปรับขวา auto การจัดกึ่งกลาง*@
+        background-image: linear-gradient(180deg, #1BB67A 0%, #59E3AC 70%);
+    }
+    .backgroundP1 {
+        background-image: url('images/P5.png'); @*พาทรูป*@ 
+        /* background: yellow; */
+        background-repeat: no-repeat; @*การเรียงรูปภาพไปแนวแกน X แนวนอน หรือ Y  รูปจะถูกใช้ครั้งเดียว*@
+        background-position: center; @*จัดตำแหน่งของพื้นหลังให้กึ่งกลาง*@
+        background-attachment: fixed; @**@
+        background-size: cover;  @**@
+        @* max-width: 100%; *@
+        width: 100%; @*ความกว้าง*@
+        height: 675px; @*ความสูง*@
+        @* opacity: 0.6; ความทึบ *@
+        @* background-size: 100% 100%; *@
+    }
+    .grid{
+        margin-bottom: 3rem; @*ขนาดของปุ่ม*@
+        display: grid; @*จัดช่องไฟ*@
+        grid-template-columns: repeat(auto-fit,minmax(200px, 1fr)); @*1fr คือให้คำนวณพื้นที่ auto*@
+    }
 </style>
 <link href="/css/bootstrap.min.css" rel="stylesheet" />
 @Html.ValidationSummary()
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 center-block">
+<body class="backgroundP1">
+<div class="container mt-5 d-flex justify-content-center  grid">
+        <div class="wrapper" >
             <h3>Registration</h3>
             <form asp-action="Registration" method="post">
-                <div class="form-group">
-                    <label>FName*</label>
+                <div class="input-box">
+                    <label>FName*</label><br />
                     <input type="text" class="form-control" asp-for="FirstName"/>
                     <span class="text-danger"  asp-validation-for="FirstName"></span>
                 </div>
 
-                <div class="form-group">
-                    <label>LName*</label>
+                <div class="input-box">
+                    <label>LName*</label><br />
                     <input type="text" class="form-control" asp-for="LastName" />
                     <span class="text-danger" asp-validation-for="LastName"></span>
                 </div>
 
-                <div class="form-group">
-                    <label>Email</label>
+                <div class="input-box">
+                    <label>Email</label><br />
                     <input type="text" class="form-control" asp-for="Email" />
                     <span class="text-danger" asp-validation-for="Email"></span>
 
                 </div>
 
-                <div class="form-group">
-                    <label>Username</label>
+                <div class="input-box">
+                    <label>Username</label><br />
                     <input type="text" class="form-control" asp-for="Username" />
                     <span class="text-danger" asp-validation-for="Username"></span>
 
                 </div>
 
-                <div class="form-group">
-                    <label>Password (eg. John@123)</label>
+                <div class="input-box">
+                    <label>Password</label><br />
                     <input type="password" class="form-control" asp-for="Password" />
                     <span class="text-danger" asp-validation-for="Password"></span>
 
                 </div>
 
-                <div class="form-group">
-                    <label>Password confirm</label>
+                <div class="input-box">
+                    <label>Password confirm</label> <br />
                     <input type="password" class="form-control" asp-for="PasswordConfirm" />
                     <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
 
@@ -96,14 +141,15 @@ button {
                 
                 @if (TempData["msg"] != null)
                 {
-                    <div class="form-group">
+                    <div class="input-box">
                        <span class="text-info">@TempData["msg"]</span>
                     </div>
                 }
 
                 <button type="submit" class="btn btn-info">Registration</button>
-                <a class="btn btn-primary" href="/UserAuthentication/Login">Login</a>
+                <br>
+                <button class="btn btn-primary" asp-action="Login" asp-controller="UserAuthentication">Login</button>
             </form>
         </div>
     </div>
-</div>
+</body>

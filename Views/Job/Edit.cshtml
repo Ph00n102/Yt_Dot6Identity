@@ -6,15 +6,12 @@
 <div class="row">
     <div class="col-md-8 mx-auto rounded border p-2">
         <h2 class="text-center mb-5">New Product</h2>
-
-
         <form method="post" enctype="multipart/form-data">
-
             <div class="row mb-3">
                 <label class="col-sm-4 col-form-label">เวรเปล</label>
                 <div class=col-sm-8>
                     <select class="form-select" asp-for="PoterFname">
-                        <option value="419  นายรณรงค์ มาลามาศ">กรุณาเลือกเวรเปล</option>
+                        <option value=" ">กรุณาเลือกเวรเปล</option>
                         <option value="419  นายรณรงค์ มาลามาศ">419  นายรณรงค์ มาลามาศ</option>
                         <option value="402  นายไพโรจน์ ชาวไร่อ้อย">402  นายไพโรจน์ ชาวไร่อ้อย</option>
                         <option value="403  นายปรีชา ยี่อินทร">403  นายปรีชา ยี่อินทร</option>
@@ -69,38 +66,7 @@
                         <option value="สิ้นสุดการบริการ">สิ้นสุดการบริการ</option>
                     </select>
                 </div>
-            </div>    
-            @* <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">ประเภทรถเข็น</label>
-                <div class=col-sm-8>
-                    <select class="form-select" asp-for="MaterialType">
-                        <option value='รถนั่ง'>รถนั่ง</option>
-                        <option value='รถนอน'>รถนอน</option>
-                        <option value='เฉพาะคน(มีรถแล้ว)'>เฉพาะคน(มีรถแล้ว)</option>
-                        <option value='รถนั่งปรับนอน'>รถนั่งปรับนอน</option>
-                        <option value='รถนั่งปรับนอน + ออกซิเจน'>รถนั่งปรับนอน + ออกซิเจน</option>
-                        <option value='รถนั่ง + เสาน้ำเกลือ'>รถนั่ง + เสาน้ำเกลือ</option>
-                        <option value='รถนั่ง + ออกซิเจน'>รถนั่ง + ออกซิเจน</option>
-                        <option value='รถนอน + ออกซิเจน'>รถนอน + ออกซิเจน</option>
-                        <option value='รถนอนผู้ป่วยติดเชื้อ'>รถนอนผู้ป่วยติดเชื้อ</option>
-                        <option value='รถนั่งผู้ป่วยติดเชื้อ'>รถนั่งผู้ป่วยติดเชื้อ</option>
-                        <option value='รถนอนผู้ป่วยติดเชื้อ + ออกซิเจน'>รถนอนผู้ป่วยติดเชื้อ + ออกซิเจน</option>
-                        <option value='รถนั่งผู้ป่วยติดเชื้อ + ออกซิเจน'>รถนั่งผู้ป่วยติดเชื้อ + ออกซิเจน</option>
-                        <option value='รถนอนพร้อมเปลตัก'>รถนอนพร้อมเปลตัก</option>
-                        <option value='รถนอนพร้อมบอร์ด'>รถนอนพร้อมบอร์ด</option>
-                        <option value='รถ Ambulance'>รถ Ambulance</option>
-                    </select>
-                </div>
-            </div> *@
-
-            @* <div class="row mb-3" >
-                <label class="col-sm-4 col-form-label">หมายเหตุ</label>
-                <div class=col-sm-8>
-                    <input class="form-control" asp-for="Remark" >
-                    <span asp-validation-for="Remark" class="text-danger"></span>
-                </div>
-            </div> *@
-
+            </div> 
             <div class="row">
                 <div class="offset-sm-4 col-sm-4 d-grid">
                     <button type="submit" class="btn btn-primary">Submit</button>

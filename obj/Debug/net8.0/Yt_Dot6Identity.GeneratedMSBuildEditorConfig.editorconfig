@@ -17,87 +17,91 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Yt_Dot6Identity
 build_property.RootNamespace = Yt_Dot6Identity
-build_property.ProjectDir = c:\mvcidentity\
+build_property.ProjectDir = D:\mvcidentity\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\mvcidentity
+build_property.MSBuildProjectDirectory = D:\mvcidentity
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/mvcidentity/Views/Admin/Display.cshtml]
+[D:/mvcidentity/Views/Admin/Display.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlzcGxheS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Dashboard/Display.cshtml]
+[D:/mvcidentity/Views/Dashboard/Display.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXERpc3BsYXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Home/Index.cshtml]
+[D:/mvcidentity/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Home/Privacy.cshtml]
+[D:/mvcidentity/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Job/Create.cshtml]
+[D:/mvcidentity/Views/Job/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Job/Edit.cshtml]
+[D:/mvcidentity/Views/Job/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Job/Index.cshtml]
+[D:/mvcidentity/Views/Job/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/NurseRequest/Create.cshtml]
+[D:/mvcidentity/Views/NurseRequest/aaa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VSZXF1ZXN0XGFhYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/mvcidentity/Views/NurseRequest/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VSZXF1ZXN0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/NurseRequest/Edit.cshtml]
+[D:/mvcidentity/Views/NurseRequest/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VSZXF1ZXN0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/NurseRequest/Index.cshtml]
+[D:/mvcidentity/Views/NurseRequest/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VSZXF1ZXN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Shared/Error.cshtml]
+[D:/mvcidentity/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Shared/_LoginPartial.cshtml]
+[D:/mvcidentity/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/mvcidentity/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/UserAuthentication/ChangePassword.cshtml]
+[D:/mvcidentity/Views/UserAuthentication/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhlbnRpY2F0aW9uXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/UserAuthentication/Login.cshtml]
+[D:/mvcidentity/Views/UserAuthentication/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhlbnRpY2F0aW9uXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/UserAuthentication/Registration.cshtml]
+[D:/mvcidentity/Views/UserAuthentication/Registration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhlbnRpY2F0aW9uXFJlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/_ViewImports.cshtml]
+[D:/mvcidentity/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/_ViewStart.cshtml]
+[D:/mvcidentity/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/mvcidentity/Views/Shared/_Layout.cshtml]
+[D:/mvcidentity/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gjjuixsxlw

@@ -1,9 +1,69 @@
 ﻿@model List<NurseRequest>
 @{
 }
+<style>
+    .content-table{
+    border-collapse: collapse; /*เส้นขอบนอก*/
+    margin: 25px 0; /*ขนาดตัวอักษร*/
+    font-size: 0.9em; /*ความกว้ง*/
+    min-width: 400px; /*ทำให้มุมมน*/
+    border-radius: 10px 10px 0 0; /*ซ่อนข้อความส่วนที่เกิน*/
+    overflow: hidden; /*สร้างเงา*/
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15); /*สร้างระยะauto*/
+}
+.content-table thead tr{
+   background-color: #04ff8a;/*สีพื้นหลัง*/
+   color: #000000;/*สี*/
+   text-align: center;/*ตัวอักษรกึ่งกลาง*/
+   font-weight: bold;/*ความหนาของตัวอักษร*/
+   height: 55px;/*ความสูง*/
+}
+.content-table  th,
+.content-table  tr{
+   padding: 2px 15px; /*สร้างระยะ*/
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #000000; /*เส้นขอบ*/
+}
+.content-table tbody tr:nth-of-type(even){
+    background-color: #000000f6; /*สีพื้นหลัง*/
+}
+.content-table tbody tr:nth-of-type(){
+    border-bottom: 20px solid #00ff73; /*สีพื้นหลัง*/
+}
 
+table{
+    border-collapse: collapse;;/*เส้นขอบนอก*/
+    background: #fffffff4;/*สีพื้นหลัง*/
+    
+}
+th,
+td{
+    padding: 1rem;/*สร้างระยะ*/
+}
+th {
+    text-align: left; /*ตัวอักษรชิดซ้าย*/
+    background: hsla(0, 0%, 100%, 0.5);  /*สีพื้นหลัง*/
+}
+tr:nth-of-type(2n) {
+    background: hsl(0, 0%, 100%);  /*สีพื้นหลัง*/
+}
+.btn1 {
+        width: 80px;  @*ความกว้าง*@
+        height: 33px; @*ความสูง*@
+        background: #aeaeae; @*พื้นหลัง*@
+        border: none; @*ไม่แสดงเส้น*@
+        outline: none; @*ไม่แสดงพื้นที่รอบนอก*@
+        border-radius: 20px; @*ทำให้มุมมน*@
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); @*สร้างเงา*@
+        cursor: pointer; @*ชี้แล้วเปลี่ยนลูกศร*@
+        color: #000000;  @*สี*@
+        font-weight: 600; @*ขนาดตัวอักษร *@
+        background-image: linear-gradient(180deg, #99CCFF 0%, #6699FF 70%);  @*ไล่สี*@
+    }
+</style>
 
-<table class="table">
+<table class="content-table table-bordered ">
     <thead>
         <tr>
             <th>QN</th>
@@ -25,45 +85,17 @@
         {
             @if(nurserequest.UrentType == "ปกติ")
             {
-            <tr class="label-success" style="color:rgb(0, 0, 0);">
-                <td>@nurserequest.QN</td>
-                <td>@nurserequest.QNName</td>
-                <td>@nurserequest.StartPoint</td>
-                <td>@nurserequest.EndPoint</td>
-                <td>@nurserequest.PoterFname</td>
-                <td>@nurserequest.MaterialType</td>
-                <td>@nurserequest.UrentType</td>
-                <td>@nurserequest.JobStatusName</td>
-                <td>@nurserequest.Remark</td>
-                <td> </td>
-                <td style="white-space:nowrap">
-                    @* <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a> *@
-                    <a class="btn btn-primary btn-sm" asp-controllers="Job" asp-action="Edit" asp-route-id="@nurserequest.JobId">จ่ายงาน</a>
-                </td>
-            </tr>
+                ViewBag.Title = "background-color:rgb(131, 247, 131);";
             }
             @if(nurserequest.UrentType == "ด่วน")
             {
-            <tr class="label-warning" style="color:rgb(0, 0, 0);">
-                <td>@nurserequest.QN</td>
-                <td>@nurserequest.QNName</td>
-                <td>@nurserequest.StartPoint</td>
-                <td>@nurserequest.EndPoint</td>
-                <td>@nurserequest.PoterFname</td>
-                <td>@nurserequest.MaterialType</td>
-                <td>@nurserequest.UrentType</td>
-                <td>@nurserequest.JobStatusName</td>
-                <td>@nurserequest.Remark</td>
-                <td> </td>
-                <td style="white-space:nowrap">
-                    @* <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a> *@
-                    <a class="btn btn-primary btn-sm" asp-controllers="Job" asp-action="Edit" asp-route-id="@nurserequest.JobId">จ่ายงาน</a>
-                </td>
-            </tr>
+                ViewBag.Title = "background-color:rgb(247, 247, 100);";
             }
             @if(nurserequest.UrentType == "ด่วนมาก")
             {
-            <tr class="label-danger" style="color:rgb(0, 0, 0);">
+                ViewBag.Title = "background-color:rgb(240, 114, 114);";
+            }
+            <tr  style="color:rgb(0, 0, 0);@ViewBag.Title">
                 <td>@nurserequest.QN</td>
                 <td>@nurserequest.QNName</td>
                 <td>@nurserequest.StartPoint</td>
@@ -74,12 +106,12 @@
                 <td>@nurserequest.JobStatusName</td>
                 <td>@nurserequest.Remark</td>
                 <td> </td>
-                <td style="white-space:nowrap">
+                <td style="white-sccpace:nowrap">
                     @* <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a> *@
-                    <a class="btn btn-primary btn-sm" asp-controllers="Job" asp-action="Edit" asp-route-id="@nurserequest.JobId">จ่ายงาน</a>
+                    @* <a class="btn btn-primary btn-sm" asp-controllers="Job" asp-action="Edit" asp-route-id="@nurserequest.JobId">จ่ายงาน</a> *@
+                    <button class="btn1 btn-primary btn-sm" asp-controllers="Job" asp-action="Edit" asp-route-id="@nurserequest.JobId">จ่ายงาน</button>
                 </td>
             </tr>
-            }
         }
     </tbody>
 </table>

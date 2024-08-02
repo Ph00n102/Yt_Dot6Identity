@@ -117,11 +117,11 @@ namespace Yt_Dot6Identity.Migrations
                 {
                     JobId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReqDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ReqTime = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: true),
+                    ReqDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ReqTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     Department = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StartPoint = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EndPoint = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -131,7 +131,7 @@ namespace Yt_Dot6Identity.Migrations
                     PoterFname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     JobStatusName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Remark = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    QN = table.Column<int>(type: "int", nullable: true),
+                    QN = table.Column<int>(type: "int", nullable: false),
                     QNName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     QNAge = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     QNSex = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -155,18 +155,18 @@ namespace Yt_Dot6Identity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Poters",
+                name: "Poter",
                 columns: table => new
                 {
-                    PoterId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    EmpId = table.Column<int>(type: "int", nullable: false),
                     PoterFname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PoterLname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Position = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    PoterLname = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Poters", x => x.PoterId);
+                    table.PrimaryKey("PK_Poter", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -403,7 +403,7 @@ namespace Yt_Dot6Identity.Migrations
                 name: "Patients");
 
             migrationBuilder.DropTable(
-                name: "Poters");
+                name: "Poter");
 
             migrationBuilder.DropTable(
                 name: "Urgents");
